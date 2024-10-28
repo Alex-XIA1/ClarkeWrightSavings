@@ -27,6 +27,8 @@ class StepOneClarkeWright:
         # Warehouse is not counted in the savings calculation
         for demandNumberI in range(1, len(distancesMatrix)):
             for demandNumberJ in range(demandNumberI, len(distancesMatrix)):
+                if demandNumberI == demandNumberJ:
+                    continue
                 distanceIJ = distancesMatrix[demandNumberI, demandNumberJ]
                 distanceIToWarehouse = distancesMatrix[demandNumberI, 0]
                 distanceWarehouseToJ = distancesMatrix[0, demandNumberJ]
